@@ -31,12 +31,15 @@ REDIS = {
         # Comment out `HOST` and `PORT` lines and uncomment the following if using Redis Sentinel
         # 'SENTINELS': [('mysentinel.redis.example.com', 6379)],
         # 'SENTINEL_SERVICE': 'netbox',
+        'USERNAME': '',
         'PASSWORD': '',
         'DATABASE': 0,
         'SSL': False,
         # Set this to True to skip TLS certificate verification
         # This can expose the connection to attacks, be careful
         # 'INSECURE_SKIP_TLS_VERIFY': False,
+        # Set a path to a certificate authority, typically used with a self signed certificate.
+        # 'CA_CERT_PATH': '/etc/ssl/certs/ca.crt',
     },
     'caching': {
         'HOST': 'localhost',
@@ -44,12 +47,15 @@ REDIS = {
         # Comment out `HOST` and `PORT` lines and uncomment the following if using Redis Sentinel
         # 'SENTINELS': [('mysentinel.redis.example.com', 6379)],
         # 'SENTINEL_SERVICE': 'netbox',
+        'USERNAME': '',
         'PASSWORD': '',
         'DATABASE': 1,
         'SSL': False,
         # Set this to True to skip TLS certificate verification
         # This can expose the connection to attacks, be careful
         # 'INSECURE_SKIP_TLS_VERIFY': False,
+        # Set a path to a certificate authority, typically used with a self signed certificate.
+        # 'CA_CERT_PATH': '/etc/ssl/certs/ca.crt',
     }
 }
 
@@ -221,6 +227,9 @@ SESSION_COOKIE_NAME = 'sessionid'
 # local file storage instead. (This can be useful for enabling authentication on a standby instance with read-only
 # database access.) Note that the user as which NetBox runs must have read and write permissions to this path.
 SESSION_FILE_PATH = None
+
+# Localization
+ENABLE_LOCALIZATION = False
 
 # Time zone (default: UTC)
 TIME_ZONE = 'UTC'

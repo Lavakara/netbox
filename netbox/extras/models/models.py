@@ -514,7 +514,7 @@ class ImageAttachment(WebhooksMixin, ChangeLoggedModel):
         return objectchange
 
 
-class JournalEntry(CustomFieldsMixin, CustomLinksMixin, TagsMixin, WebhooksMixin, ChangeLoggedModel):
+class JournalEntry(CustomFieldsMixin, CustomLinksMixin, TagsMixin, WebhooksMixin, ExportTemplatesMixin, ChangeLoggedModel):
     """
     A historical remark concerning an object; collectively, these form an object's journal. The journal is used to
     preserve historical context around an object, and complements NetBox's built-in change logging. For example, you
@@ -651,7 +651,12 @@ class JobResult(models.Model):
         if not self.completed:
             return None
 
-        duration = self.completed - self.created
+        start_time = self.started or self.created
+
+        if not start_time:
+            return None
+
+        duration = self.completed - start_time
         minutes, seconds = divmod(duration.total_seconds(), 60)
 
         return f"{int(minutes)} minutes, {seconds:.2f} seconds"
