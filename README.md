@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/netbox-community/netbox/develop/docs/netbox_logo.svg" width="400" alt="NetBox logo" />
 </div>
 
-NetBox is the leading solution for modeling and documenting modern networks. By
+NetBox-Captain is the leading solution for modeling and documenting modern networks. By
 combining the traditional disciplines of IP address management (IPAM) and
 datacenter infrastructure management (DCIM) with powerful APIs and extensions,
 NetBox provides the ideal "source of truth" to power network automation.
